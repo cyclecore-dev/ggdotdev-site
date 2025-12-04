@@ -16,35 +16,6 @@
     <p>Unlock the full power of gg with our Pro tier for just $15/month. This includes unlimited access to the 'gg ask' workflow, where Maaza can write code and open PRs directly in your repositories.</p>
     <p>Free tier users will see a stub message prompting to upgrade when attempting Pro features.</p>
     <p>After subscribing, you'll receive a license key via email to activate Pro in your gg installation.</p>
-    <button id="checkout-button">Subscribe to Pro ($15/mo)</button>
-
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        // Replace 'pk_test_...' with your actual Stripe publishable key (from your existing Stripe setup)
-        const stripe = Stripe('price_1SaTOoIVRWvqWfPN43lThRfd');
-
-        const checkoutButton = document.getElementById('checkout-button');
-
-        checkoutButton.addEventListener('click', function () {
-            // Create the checkout session client-side
-            stripe.redirectToCheckout({
-                mode: 'subscription',
-                lineItems: [
-                    {
-                        // Replace 'price_1...' with the actual Price ID for the $15/mo GG Pro product (create this in your Stripe dashboard)
-                        price: 'price_1SaTOoIVRWvqWfPN43lThRfd',
-                        quantity: 1
-                    }
-                ],
-                // Replace with your actual success and cancel URLs (e.g., static pages on gg.dev)
-                successUrl: 'https://gg.dev/success?session_id={CHECKOUT_SESSION_ID}',
-                cancelUrl: 'https://gg.dev/pro'
-            }).then(function (result) {
-                if (result.error) {
-                    console.error(result.error.message);
-                }
-            });
-        });
-    </script>
+    <a href="https://buy.stripe.com/fZufZibOAfAyfzg5LCcbC03" style="display: inline-block; background-color: #6772e5; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-size: 16px;">Subscribe to Pro ($15/mo)</a>
 </body>
 </html>
