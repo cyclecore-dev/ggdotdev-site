@@ -1,8 +1,133 @@
 <!DOCTYPE html>
-<html><head><title>gg — ask in natural language, get a real PR</title></head>
-<body style="font-family:sans-serif;text-align:center;padding:6rem;">
-  <h1>gg</h1>
-  <p>ask in natural language → get a real PR</p>
-  <p><a href="/pro">Upgrade to Pro → $15/mo</a></p>
-  <p><a href="https://github.com/ggdotdev/gg">GitHub repo</a></p>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gg — the 2-letter agent-native git client</title>
+  <meta name="description" content="98% fewer tokens on git/npm/brew calls. Your AI agents stay fast, your bills stay low.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #00ff00;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+      margin: 0;
+      padding: 40px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+    h1 {
+      font-size: 3rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: normal;
+    }
+    h2 {
+      color: #00cc00;
+      font-size: 1.1rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: normal;
+    }
+    .tagline {
+      color: #888;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .highlight { color: #fff; }
+    pre {
+      background: #111;
+      border: 1px solid #333;
+      padding: 16px 20px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+    code { color: #00ff00; }
+    .savings-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .savings-table th,
+    .savings-table td {
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid #333;
+    }
+    .savings-table th { color: #888; }
+    .savings-table .number { color: #fff; }
+    a { color: #00ff00; }
+    a:hover { color: #fff; }
+    .links { margin-top: 2rem; }
+    .links a { margin-right: 1.5rem; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #333;
+      color: #666;
+      font-size: 0.85rem;
+    }
+    footer a { color: #888; }
+    .pro-link {
+      display: inline-block;
+      background: #00ff00;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    .pro-link:hover { background: #fff; color: #000; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>gg</h1>
+    <p class="tagline">the 2-letter agent-native git client</p>
+    <p><span class="highlight">98% fewer tokens</span> on git/npm/brew calls.<br>
+    Your AI agents stay fast. Your bills stay low.</p>
+
+    <h2>$ install</h2>
+    <pre><code># npm (recommended)
+npm install -g @ggdotdev/gg
+
+# curl
+curl -fsSL https://raw.githubusercontent.com/cyclecore-dev/gg/main/gg.sh | sh
+
+# homebrew
+brew install cyclecore-dev/gg/gg
+
+# arch (aur)
+yay -S gg-bin</code></pre>
+
+    <h2>$ quick start</h2>
+    <pre><code>gg init              # configure provider + API key
+gg .                 # current repo → MCP (~12 tokens)
+gg npm prettier      # npm package → MCP (~18 tokens)
+gg ask "add auth"    # natural language → real PR
+gg a2a ask "plan X"  # CLI2CLI agent protocol</code></pre>
+
+    <h2>$ token savings</h2>
+    <table class="savings-table">
+      <tr><th>operation</th><th>before</th><th>after</th><th>savings</th></tr>
+      <tr><td>npm package lookup</td><td class="number">~1,800</td><td class="number">~18</td><td class="number">99%</td></tr>
+      <tr><td>GitHub file + PR</td><td class="number">~2,400</td><td class="number">~62</td><td class="number">97%</td></tr>
+      <tr><td>daily agent (20 calls)</td><td class="number">40k</td><td class="number">800</td><td class="number">98%</td></tr>
+    </table>
+
+    <h2>$ providers</h2>
+    <p>Works with <span class="highlight">Claude</span>, <span class="highlight">GPT-4</span>, <span class="highlight">Ollama</span>, and any MCP client.</p>
+
+    <a href="/pro" class="pro-link">Pro → $15/mo unlimited</a>
+
+    <div class="links">
+      <a href="https://github.com/cyclecore-dev/gg">GitHub</a>
+      <a href="https://www.npmjs.com/package/@ggdotdev/gg">npm</a>
+    </div>
+
+    <footer>
+      MIT licensed. No tracking. No vendor lock-in.<br>
+      Sponsored by <a href="https://cyclecore.ai">CycleCore Technologies</a>
+    </footer>
+  </div>
+</body>
+</html>
